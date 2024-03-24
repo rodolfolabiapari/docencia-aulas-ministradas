@@ -1,0 +1,102 @@
+\documentclass[red, 10pt, aspectratio=169, xcolor=dvipsnames]{beamer} 
+%Definições de tema
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\usetheme{Boadilla}
+\usecolortheme{beaver}
+\usecolortheme{lily}
+\usefonttheme{structurebold}
+\setbeamercolor{frametitle}{bg=white!10!white}
+
+\setbeamertemplate{items}[square]
+%\setbeamertemplate{caption}[numbered]
+
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{algorithm, algpseudocode}
+\usepackage{graphicx}
+\usepackage{subfig}
+\usepackage{multicol}
+\usepackage{verbatim}
+\usepackage[absolute]{textpos}
+\usepackage{todonotes}\presetkeys{todonotes}{inline}{}
+\usepackage{minted}
+\makeatletter
+\renewcommand{\ALG@beginalgorithmic}{\small}
+\makeatother
+
+\title[Arquitetura de Computadores  -- \textit{Hardware} Reconfigurável]{Arquitetura de Computadores  -- Dispositivos Lógico Programáveis (\textit{Hardware} Reconfigurável)}
+\subtitle{Arranjo de Portas Programável em Campo - FPGA}
+\date{Última Atualização: \today}
+\author[\textit{rodolfolabiapari@decom.ufop.br}]{Rodolfo Labiapari Mansur Guimarães}
+
+\institute[UFOP]{
+	\textit{rodolfolabiapari@decom.ufop.br} \\
+	Lattes: \url{http://goo.gl/MZv4Dc} \\
+	Departamento de Computação -- Universidade Federal de Ouro Preto \\
+		Ouro Preto - MG -- Brasil }
+
+\AtBeginSection[]
+{
+	\usebackgroundtemplate{}
+	\begin{frame}{Sumário}
+		\tableofcontents[currentsection,
+		currentsubsection,
+		hideothersubsections,
+		sectionstyle=show/shaded
+		]
+	\end{frame}
+	\usebackgroundtemplate{\includegraphics[trim=0 271cm 0 0, width=0.04\textwidth]{img/ufop.jpg}}
+}
+
+\begin{document}
+\maketitle
+
+\usebackgroundtemplate{\includegraphics[trim=0 271cm 0 0, width=0.04\textwidth]{img/ufop.jpg}}
+
+
+\begin{frame}{Sobre esta Aula}
+		\pause
+		\centering
+		\Large
+		``\textit{Não existe pergunta idiota, existe idiota que não pergunta}''.
+\end{frame}
+
+	\begin{frame}{Sobre Mim}
+		\note{Isso é uma nota}
+		\begin{itemize}
+			\setlength\itemsep{1.3em}
+			\item \textbf{Formação:} Instituto Federa de Educação, Ciência e Tecnologia de Minas Gerais (IFMG) - Campus Formiga.
+			\item \textbf{Pesquisas Aplicadas:}
+			\begin{itemize}
+				\setlength\itemsep{0.7em}
+				\item Projeto e Desenvolvimento de um Carro Robô controlado por \textit{Smartphone}, Utilizando a Plataforma Amarino (Google Android e Arduino);
+				\item Projeto e Desenvolvimento de um \textit{Hardware} Reconfigurável de Criptografia para a Transmissão Segura de Dados.
+			\end{itemize}
+
+			\item \textbf{Trabalho de Conclusão de Curso:}
+			\begin{itemize}
+				\item Desenvolvimento de um \textit{Device Driver} para Comunicação com um \textit{Hardware} Reconfigurável.
+			\end{itemize}
+
+			\item \textbf{Lattes:} \url{http://goo.gl/MZv4Dc}.
+		\end{itemize}
+	\end{frame}
+
+\include{tex/discret_math}
+\include{tex/logic_devices}
+\include{tex/fpga}
+\include{tex/ufop}
+
+\maketitle
+
+\section{Bibliografia}
+
+\bibliographystyle{abbrv}
+\bibliography{sbc-template}
+
+\maketitle
+%
+\end{document}

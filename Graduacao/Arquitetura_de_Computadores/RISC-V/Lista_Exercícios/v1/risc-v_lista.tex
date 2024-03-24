@@ -1,0 +1,183 @@
+% !TeX spellcheck = pt_BR
+% ANUfinalexam.tex (Version 2.0)
+% ===============================================================================
+% Australian National University Final Exam LaTeX template.
+% 2004; 2009, Timothy Kam, ANU School of Economics
+% Licence type: Free as defined in the GNU General Public Licence: http://www.gnu.org/licenses/gpl.html
+
+\documentclass[a4paper,12pt,fleqn]{article}
+\usepackage{amsmath}
+\usepackage{fancyhdr}
+\usepackage{verbatim}
+
+\usepackage[utf8]{inputenc} % Entrada do Teclado
+\usepackage[T1]{fontenc}    % Saída para a compilação
+\usepackage[brazil]{babel}  % Idioma de Compilação
+\usepackage{url}
+
+% Insert your course information here %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\institution}{UNIVERSIDADE FEDERAL DE OURO PRETO}
+\newcommand{\titlehd}{Arquitetura de Computadores}
+\newcommand{\examtype}{Lista: RISC-V}
+\newcommand{\examdate}{\today}
+\newcommand{\examcode}{BCC 236}
+\newcommand{\readtime}{Quinze Minutos}
+\newcommand{\writetime}{Duas Horas}
+\newcommand{\materials}{Nenhum Material Auxiliar é permitido}
+\newcommand{\lastwords}{Fim do Teste}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\setcounter{MaxMatrixCols}{10}
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\noindent\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+
+% ANU Exams Office mandated margins and footer style
+\setlength{\topmargin}{0cm}
+\setlength{\textheight}{9.25in}
+\setlength{\oddsidemargin}{0.0in}
+\setlength{\evensidemargin}{0.0in}
+\setlength{\textwidth}{16cm}
+\pagestyle{fancy}
+\lhead{} 
+\chead{} 
+\rhead{} 
+\lfoot{} 
+\cfoot{\footnotesize{Página \thepage \ de \pageref{finalpage} -- \titlehd \ (\examcode)}} 
+\rfoot{} 
+
+% DEPRECATED: ANU Exams Office mandated margins and footer style
+%\setlength{\topmargin}{0cm}
+%\setlength{\textheight}{9.25in}
+%\setlength{\oddsidemargin}{0.0in}
+%\setlength{\evensidemargin}{0.0in}
+%\setlength{\textwidth}{16cm}
+%\pagestyle{fancy}
+%\lhead{} %left of the header
+%\chead{} %center of the header
+%\rhead{} %right of the header
+%\lfoot{} %left of the footer
+%\cfoot{} %center of the footer
+%\rfoot{Page \ \thepage \ of \ \pageref{finalpage} \\
+%       \texttt{\examcode}} %Print the page number in the right footer
+
+\renewcommand{\headrulewidth}{0pt} %Do not print a rule below the header
+\renewcommand{\footrulewidth}{0pt}
+
+
+\begin{document}
+
+% Title page
+
+\begin{center}
+%\vspace{5cm}
+\large\textbf{\institution}
+\end{center}
+
+\begin{center}
+\textit{ \examtype\ -- \examdate \\ Orientação: Rodolfo Labiapari - rodolfolabiapari@decom.ufop.br}
+\end{center}
+
+\begin{center}
+\large\textbf{\titlehd\ - \examcode}
+\end{center}
+\vspace{0.3cm}
+
+\begin{comment}
+
+\begin{center}
+\textit{Reading Time: \readtime}
+\end{center}
+\begin{center}
+\textit{Writing Time:  \writetime}
+\end{center}
+\begin{center}
+\textit{Permitted Materials: \materials}
+\end{center}
+\end{comment}
+
+% End title page
+\it
+
+\begin{quote}
+	\it
+	Observações:
+	
+	\begin{itemize}
+		\item Responda às questões abaixo de forma completa; 
+		\item Todo o conteúdo escrito será avaliado;
+		\item Plágios serão tidos como nota 0 entre ambos os envolvidos;
+		\item Referencie de forma correta respostas obtidas de materiais de terceiros;
+		\item A lista deverá ser entregue na data da próxima aula, dia 30/01/17, até às 23:59;
+		\item Pode ser entregue tanto de forma digital (formato PDF), ou física;
+		\item Transparências para estudos e consultas: \url{goo.gl/jzI3Ok} e \url{https://goo.gl/PpRPWk}. 
+	\end{itemize}
+	
+	%Responda \textbf{todas} as questões abaixo. É esperado respostas sucintas mas completas. Respostas irrelevantes serão penalizadas e por isso assim, \textbf{todo conteúdo escrito será avaliado}.
+\end{quote}
+
+\vspace{0.3cm}
+
+
+\paragraph{Questão 1} Dê exemplos de aparelhos que utilizam ISA RISC.
+
+\paragraph{Questão 2} Explique o que é o projeto RISC-V.
+
+\paragraph{Questão 3} RISC-V é utilizado só para uso acadêmico?
+
+\paragraph{Questão 4} Quais são as extensões oficiais do RISC-V ditas em aula e qual o propósito de cada uma?
+
+\paragraph{Questão 5} É possível adicionar minha própria extensão, cujo nome é \texttt{extensaoUFOP} ao projeto?
+
+\paragraph{Questão 6} Quantos registradores o RISC-V possui e quais são eles? Esse número pode ser alterado?
+
+\paragraph{Questão 7} Cite duas otimizações realizadas no projeto do RISC-V.
+
+\paragraph{Questão 8} RISC-V possui operações de multiplicação com acesso direto à memória principal?
+
+\paragraph{Questão 9} Qual é o propósito de utilizar a extensão C?
+
+\paragraph{Questão 10} Existe alguma diferença entre os formatos de operações do RV32I, RV64I e a Extensão C?
+
+\paragraph{Questão 11} RISC-V possui o condicional \texttt{if}? Como ele realiza suas instruções de condição?
+
+%\paragraph{Questão 12} Quantos formatos de instruções existem no RISC-V e quais são eles?
+
+\paragraph{Questão 12} Observando as posições dos registradores na tabela de formato de instruções, por que eles estão situados na mesma posição em todas os formatos?
+
+\paragraph{Questão 13} Qual a diferença das instruções \texttt{jump} e \texttt{jump and link}?
+
+\paragraph{Questão 14} O que é o Rocket-Chip e quantos estágios ele possui?
+
+\paragraph{Questão 15} Explique sucintamente como Rocket-Chip é utilizado.
+
+\begin{center}
+\vspace{3cm}
+------------ \textit{\lastwords} ------------
+\end{center}
+
+
+\label{finalpage}
+
+\end{document}
