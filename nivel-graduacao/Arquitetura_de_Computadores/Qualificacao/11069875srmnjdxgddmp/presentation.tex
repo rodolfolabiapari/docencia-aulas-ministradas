@@ -1,0 +1,247 @@
+% !TeX encoding = UTF-8
+% !TEX spellcheck = pt_BR
+\documentclass[red, % Color red
+tikz, 
+%aspectratio=169, % wide slide
+xcolor=table]{beamer}
+
+% ATENÇÃO, READ-ME, LEIA AQUI
+% O PACOTE tikzpicture NÃO ESTÁ COMPILANDO NO OVERLEAF E POR ISSO
+% DEVE SER COMPILADO LOCALMENTE POIS É SUCESSO
+% DEIXAR A CÓPIA NO GIT MESMO ASSIM POR BACKUP
+
+%%%%%%%%%%%%%%%% Theme
+\setbeamertemplate{blocks}[rounded][shadow=false] %blocks rounded
+\usetheme{Madrid} % theame name
+\setbeamertemplate{items}[square] % items squared
+\setbeamertemplate{itemize item}{\color[rgb]{0.8,0,0}$\blacksquare$}
+\setbeamertemplate{itemize subitem}{\color[rgb]{0.8,0,0}$\blacksquare$}
+\setbeamertemplate{itemize subsubitem}{\color[rgb]{0.8,0,0}$\blacksquare$}
+\setbeamertemplate{caption}[numbered] 
+\usecolortheme{beaver}
+\setbeamercolor{frametitle}{bg=white!10!white}
+
+%%%%%%%%%%%%%%%% For notations in speaker time
+% Para comentários no presentation.app
+\usepackage{pdfcomment}
+\newcommand{\pdfnote}[1]{\marginnote{\pdfcomment[icon=note]{#1}}}
+
+%%%%%%%%%%%%%%%% Fonts
+\usefonttheme{professionalfonts}
+
+%%%%%%%%%%%%%%%% Definições de seção
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{2}
+
+\mode<presentation>{} % https://tex.stackexchange.com/questions/116913/display-the-definition-of-each-items-in-beamer-one-by-one-using-onslide-or-any-m
+\usepackage{textcomp}
+\usepackage{xkeyval}
+\usepackage{pdfpages}
+\usepackage{todonotes}
+\presetkeys{todonotes}{inline}{}
+
+\usepackage{tikzsymbols}
+\usepackage{tikz}
+\tikzset{
+   invisible/.style={opacity=0},
+   visible on/.style={alt={#1{}{invisible}}},
+   alt/.code args={<#1>#2#3}{%
+      \alt<#1>{\pgfkeysalso{#2}}{\pgfkeysalso{#3}} % \pgfkeysalso doesn't change the path
+   },
+}
+
+\usepackage{pgfplots}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{float}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{subfigure}
+\usepackage{mathtools} % setas com texto
+\usepackage{multicol}
+\usepackage{listings}
+\usepackage{scalefnt}
+\usepackage{ragged2e}
+\usepackage{etoolbox, verbatim}
+\usepackage{soul}
+
+\usepackage{tabularx,dcolumn} %tabela
+\usepackage{booktabs}
+\newcommand{\raaa}[1]{\renewcommand{\arraystretch}{#1}}
+
+\usepackage{ltablex}
+\newcommand{\specialcell}[2][c]{\begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
+
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+
+\usepackage[linguistics]{forest}
+\usepackage[cache=false]{minted}
+
+\usepackage{amsmath}
+\usepackage[algoruled,linesnumbered,lined,portuguese]{algorithm2e}
+
+\newcommand{\hardware }{\textit{hardware}}
+\newcommand{\Hardware }{\textit{Hardware}}
+\newcommand{\software }{\textit{software}}
+\newcommand{\Software }{\textit{Software}}
+\newcommand{\hardwares}{\textit{hardwares}}
+\newcommand{\Hardwares}{\textit{Hardwares}}
+\newcommand{\softwares}{\textit{softwares}}
+\newcommand{\Softwares}{\textit{Softwares}}
+
+\newcommand{\hs}{\textit{hardware}\ e\ \textit{software}}
+\newcommand{\HS}{\textit{Hardware}\ e\ \textit{Software}}
+
+\newcommand{\wearable} {\textit{wearable}}
+\newcommand{\Wearable} {\textit{Wearable}}
+\newcommand{\wearables}{\textit{wearables}}
+\newcommand{\Wearables}{\textit{Wearables}}
+
+
+\newcommand{\design}   {\textit{design}}
+\newcommand{\designer} {\textit{designer}}
+\newcommand{\Design}   {\textit{Design}}
+\newcommand{\Designer} {\textit{Designer}}
+\newcommand{\designs}  {\textit{designs}}
+\newcommand{\designers}{\textit{designsers}}
+\newcommand{\Designs}  {\textit{Designs}}
+\newcommand{\Designers}{\textit{Designers}}
+\newcommand{\assembly} {\textit{assembly}}
+\newcommand{\profile}  {\textit{profile}}
+\newcommand{\Profile}  {\textit{Profile}}
+\newcommand{\speedup}  {\textit{speedup}}
+\newcommand{\Speedup}  {\textit{Speedup}}
+\newcommand{\core}     {\textit{core}}
+\newcommand{\cores}    {\textit{cores}}
+\newcommand{\codesign} {\textit{codesign}}
+\newcommand{\mobile}   {\textit{mobile}}
+\newcommand{\benchmark}   {\textit{benchmark}}
+\newcommand{\benchmarks}   {\textit{benchmarks}}
+\newcommand{\Benchmark}   {\textit{Benchmark}}
+\newcommand{\Benchmarks}   {\textit{Benchmarks}}
+\newcommand{\titulo}{Uma Abordagem do Problema de Particionamento \textit{Hardware} e \textit{Software} para \textit{Design} de Sistemas Computacionais \textit{Wearables}}
+
+\newcommand{\bx}[1]{\colorbox{yellow}{\fbox{#1}}}
+
+\newcommand{\Abs}[1]{\left\lvert#1\right\rvert}
+
+\newcommand{\A}{$\mathcal{A}$}
+\newcommand{\B}{$\mathcal{B}$}
+\newcommand{\C}{$\mathcal{C}$}
+
+\definecolor{beamerVermelho}{RGB}{162, 0, 0}
+\definecolor{beamerCinza}{RGB}{101, 101, 101}
+
+%\usepackage[natbib=true, bibstyle=authoryear, citestyle=authoryear-comp]{biblatex}
+%\usepackage{natbib}%\bibpunct{(}{)}{;}{a}{,}{,}
+
+% Listing
+\lstset{
+	numbers=left,
+	stepnumber=1,
+	numbersep=5pt,
+	numberstyle=\small\color{black},
+	basicstyle= \scriptsize,
+%	keywordstyle=\color{black},
+%	commentstyle=\color{black},
+%	stringstyle=\color{black},
+	tabsize=2
+}
+
+\let\olditem=\item%
+%\renewcommand{\item}{\olditem \justifying} % texto justificado
+
+\title[Universidade Federal de Ouro Preto]{\textbf{\titulo}\\}
+
+\author[\textit{rodolfolabiapari@decom.ufop.br}]{
+   Discente: Rodolfo Labiapari Mansur Guimarães \\ Orientador: Dr. Ricardo Augusto Rabelo Oliveira}
+
+\institute[UFOP]{\begin{figure}
+			\centering
+			\includegraphics[width=0.1\textwidth]{img/ufop.jpg}
+		\end{figure}}
+   
+\institute[]{
+	\textit{rodolfolabiapari@decom.ufop.br} -- Lattes: \url{http://goo.gl/MZv4Dc} \\
+    Laboratório iMobilis \\
+	Departamento de Computação -- Instituto de Ciências Exatas e Biológicas\\
+	Universidade Federal de Ouro Preto \\
+	Ouro Preto - MG -- Brasil }
+
+\date[\today]{Última Atualização: \today}
+
+%\usepackage{bibentry}
+
+\usepackage[backend=bibtex, firstinits=true, style=alphabetic,maxalphanames=1]{biblatex}
+\addbibresource{bibliography.bib}
+% Removes icon in bibliography
+%\setbeamertemplate{bibliography item}{}
+
+
+\usepackage{appendixnumberbeamer} % appendix stop count
+
+\begin{document}
+
+\frame{\titlepage}
+
+\AtBeginSection[]
+{
+\begin{frame}
+	\frametitle{Sumário}
+	\tableofcontents[hideallsubsections]
+\end{frame}
+}
+
+
+\usebackgroundtemplate{\includegraphics[trim=0cm 0cm 2cm -393cm, width=0.03\textwidth]{img/ufop.jpg}}
+
+\include{./tex/intro} 
+
+
+\AtBeginSubsection[]
+{
+   \begin{frame}
+      \frametitle{Sumário}
+      \tableofcontents[
+      currentsection,
+      %sectionstyle=show/hiden,
+      %currentsubsection,
+      hideothersubsections,
+      %subsectionstyle=show/shaded, 
+      ]
+   \end{frame}
+}
+
+\include{./tex/rb}
+\include{./tex/tr}
+\include{./tex/met1}
+\include{./tex/met2} % do not utilize
+\include{./tex/implementacao}
+%\include{./tex/conc}
+
+\frame{\titlepage}
+
+\appendix
+\begin{comment}
+\section*{Bibliografia}
+
+\begin{frame}[allowframebreaks]
+   \frametitle{Referências}
+   %\printbibliography
+   %\bibliographystyle{plain}
+   \printbibliography
+   
+   
+   %\bibliographystyle{amsalpha}
+   %\bibliography{bibliography}
+\end{frame}
+
+\maketitle
+\end{comment}
+%\include{./tex/fator}
+
+\end{document}

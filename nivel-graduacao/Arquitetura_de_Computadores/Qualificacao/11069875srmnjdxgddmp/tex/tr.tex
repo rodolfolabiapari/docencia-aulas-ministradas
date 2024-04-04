@@ -1,0 +1,72 @@
+% !TeX encoding = UTF-8
+% !TEX root = ./presentation.tex
+\section{Trabalhos Relacionados}
+   \subsection{Apresentação dos Trabalhos}
+   %\frame{\centering \bf \Huge \color{beamerCinza} Particionamento para Sistemas Gerais}
+
+   \begin{frame}{Trabalhos Relacionados} \vspace{-1em}
+      \begin{table} \scriptsize
+         \caption{Comparativo entre os principais itens.}
+         \rowcolors{1}{gray!10}{gray!30}
+         \begin{tabularx}{\textwidth}{|c|X|c|c|c|X|} \hline
+            \# & \textbf{Trabalhos Relacionados} \centering & 
+            \specialcell{\textbf{Particio-}\\\textbf{namento}} &
+            \specialcell[h]{\textbf{Embarcado/}\\\textbf{\Wearable}} & 
+            \textbf{FPGA} & 
+            \textbf{Observações Adicionais} \\ \hline \hline
+            1 & \cite{Edwards1994}           & \cmark & \cmark\ / \xmark & \cmark & Proposta de uma metodologia nova \\ \hline
+            2 & \cite{Stitt2003}             & \cmark & \cmark\ / \xmark & \cmark & Particionamento Dinâmico \\ \hline
+            3 & \cite{Jigang2004, Mann2007, Strachacki2008}               & \cmark & \xmark\ / \xmark & \xmark & \textit{Branch-and-bound} \\ \hline
+            4 & \cite{Madsen1997, Wu2006}    & \cmark & \xmark\ / \xmark & \xmark & Prog. dinâmica \\ \hline
+            5 & \cite{Niemann1997}           & \cmark & \xmark\ / \xmark & \xmark & Prog. linear inteira \\ \hline
+            6 & \cite{Nematbakhsh_theeffect} & \cmark & \xmark\ / \xmark & \cmark & \textit{Footprint} FPGA vs. \speedup\ \software \\ \hline
+            7 & \cite{Yan2017}               & \cmark & \xmark\ / \xmark & \xmark & Otimização \textit{position disturbed particle swarm} \\ \hline
+            8 & \cite{Wang2016}              & \cmark & \cmark\ / \xmark & \cmark & Modelagem de incerteza para o particionamento \\ \hline
+            9 & \cite{Choi2016}               & \cmark & \xmark\ / \xmark & \cmark & \textit{Framework} LegUp \\ \hline
+         \end{tabularx}
+      \end{table}
+   \end{frame}
+   
+   
+   \begin{frame}\vspace{-1em}
+      \begin{table} \scriptsize
+         \caption{Comparativo entre os principais itens.} \vspace{-1em}
+         \rowcolors{1}{gray!10}{gray!30}
+         \begin{tabularx}{\textwidth}{|c|X|c|c|c|X|} \hline
+            \# & \textbf{Trabalhos Relacionados} \centering & 
+            \specialcell{\textbf{Particio-}\\\textbf{namento}} &
+            \specialcell[h]{\textbf{Embarcado/}\\\textbf{\Wearable}} & 
+            \textbf{FPGA} & 
+            \textbf{Observações Adicionais} \\ \hline \hline
+            % embedded
+            10 & \cite{Mei2000}               & \cmark & \cmark\ / \xmark & \cmark & Processador (Particionamento e escalonamento para SE dinamicamente reconfiguráveis com GA) \\ \hline
+            11 & \cite{Arato2003}             & \cmark & \cmark\ / \xmark & \xmark & Particionamento para RTOS e custo restringido, utiliza-se de prog. linear inteira \\ \hline
+            12 & \cite{Mann2007}              & \cmark & \cmark\ / \xmark & \xmark & \textit{Branch-and-bound} \\ \hline
+            13 & \cite{Hassine2017}           & \cmark & \cmark\ / \xmark & \xmark & Otimizações em \cores. Particionamento que visa o tempo de execução vs. gasto energético \\ \hline
+            14 & \cite{Trindade2016}          & \cmark & \cmark\ / \xmark & \xmark & Utiliza GA \\ \hline
+            15 & \cite{Jozwiak2017}           & \cmark & \cmark\ / \xmark & \xmark & \textit{Survey} sobre particionamentos em sistemas embutidos. Classifica-os em dois paradigmas: \textit{life-inspired} \textit{quality-driven} \\ \hline
+         \end{tabularx}
+      \end{table}
+   \end{frame}
+   
+   
+   \begin{frame}
+      \begin{table} \scriptsize
+         \caption{Comparativo entre os principais itens.}
+         \rowcolors{1}{gray!10}{gray!30}
+         \begin{tabularx}{\textwidth}{|c|X|c|c|c|X|} \hline
+            \# & \textbf{Trabalhos Relacionados} \centering & 
+            \specialcell{\textbf{Particio-}\\\textbf{namento}} &
+            \specialcell[h]{\textbf{Embarcado/}\\\textbf{\Wearable}} & 
+            \textbf{FPGA} & 
+            \textbf{Observações Adicionais} \\ \hline \hline
+            
+            % fpga
+            16 & \cite{Plessl2003, Ahola2007, 
+               Abdelhedi2016, Narumi2016, 
+               Lee2015}                      & \xmark & \cmark\ / \cmark & \cmark & Não realizam análise metodológica sobre o problema de particionamento \\  \hline \hline
+            
+            17 & \textbf{Trabalho Proposto}    & \cmark & \cmark\ / \cmark & \cmark & \textbf{Metodologia para \wearable\ com foco em aumento de \speedup\ e controle energético} \\ \hline
+         \end{tabularx}
+      \end{table}
+   \end{frame}

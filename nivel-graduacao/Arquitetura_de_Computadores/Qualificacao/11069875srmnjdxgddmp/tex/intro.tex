@@ -1,0 +1,138 @@
+% !TeX encoding = UTF-8
+% !TEX root = ./presentation.tex
+% !TEX spellcheck = pt_BR
+\section{Apresentação}
+
+   \subsection{Introdução ao Problema}
+      \begin{frame}
+         \frametitle{Introdução}
+         \begin{itemize}
+            \setlength{\itemsep}{1.3em}
+            \item Sistemas embarcados (SE) e \wearables\ estão cada vez mais presentes, devido
+            \begin{itemize} \setlength{\itemsep}{0.3em}
+               \item Progresso na \textbf{obtenção} e \textbf{manipulação de informações};
+               \item \textbf{Ascensão da tecnologia} da microeletrônica, comunicação e sensores \cite{Jozwiak2017}.
+            \end{itemize}
+            
+            \item Demanda por \textbf{curto tempo para disponibilidade} ao mercado;
+            \item Propriedades de \textbf{corretude}, \textbf{rapidez}, \textbf{confiabilidade} e \textbf{preço acessível}.
+            
+            
+            \item SE gerais são considerados únicos pela necessidade de um \codesign\ \cite{Wolf1994}
+            \begin{itemize}
+               
+               \item Possuem componentes \textbf{implementados tanto em \hs}.
+            \end{itemize}
+            
+         \end{itemize}
+         \pdfnote{As pesquisas em \codesign\ têm como objetivo o \design\ de sistemas heterogêneos, visando performance, custo e metas de confiabilidade \cite{Edwards1994}}
+      \end{frame}
+      
+
+      \begin{frame} \vspace{-1em}
+         \frametitle{Problema de Particionamento}
+         \begin{itemize} \setlength{\itemsep}{1.6em}
+            \item Preocupação atual no desenvolvimentos de projetos SE
+            \begin{itemize} \setlength{\itemsep}{1.2em}
+               \item A \textbf{redução do ciclo de comercialização} de um produto;
+               \item Aumento de sua \textbf{eficiência}.
+            \end{itemize}
+            
+            
+            \item Sobre isso, o particionamento \hs
+            \begin{itemize} \setlength{\itemsep}{1.2em}
+               \item \cite{Hassine2017}: ``uma das \textbf{soluções mais elegantes} na computação que provê \textbf{otimizações sistêmicas} sobre essas circunstâncias'';
+               \item Ou seja, uma das \textbf{principais tecnologias para o desenvolvimento de sistemas embarcados em geral}.
+            \end{itemize}
+            
+         \end{itemize}
+      \end{frame}
+      
+      
+      
+   \subsection{Motivação}
+      \begin{frame} \vspace{-1em}
+         \frametitle{Motivação}
+         \begin{itemize} \setlength{\itemsep}{1.2em}
+            \item Produtos modernos \textbf{necessitam} de um bom \codesign\ \cite{Trappey2016}. 
+            
+            \item Implementações somente em módulos de \software
+            \begin{itemize}
+               \item Possuem \textbf{mais flexibilidade} e são \textbf{menos custosos};
+               \item Entretanto, seu custo \textbf{eleva-se} em termos de \textbf{tempo de execução};
+            \end{itemize}
+           
+            \item Ao utilizar recursos em \hardware\ \cite{Zhang2008, Hassine2017, Wolf1994, Canis2011, Stone2010}
+            \begin{itemize}
+               \item Proverá maior \textbf{eficiência energética}; e 
+               \item \textbf{\Speedup}\ maior às implementações.
+            \end{itemize}
+            
+                  
+            % combinação de fpga com cpu
+            \item Processador + \hardware\ reconfigurável\footnote{FPGAs, do inglês \textit{Field-Programmable Gates Array}.} forma um sistema computacional híbrido
+            
+            \begin{itemize}
+               \item Utilizado como meio para melhoria de desempenho e eficiência energética \cite{Cong2009, Lo2009, Zhang2008a}. 
+            \end{itemize}
+            
+         \end{itemize}
+         
+      \end{frame}
+   
+   
+   \subsection{Objetivos}
+      \begin{frame}{Objetivos}
+      
+         \begin{itemize} \setlength{\itemsep}{1.2em}
+            \item \textbf{Gerais}
+            \begin{itemize} \setlength{\itemsep}{0.6em}
+               \item Abordagem do particionamento \hs;
+               \item Sua importância no mundo de sistemas computacionais embutidos, foco em sistemas \wearables.
+            \end{itemize}
+            
+            \item \textbf{Específicos}
+            
+            \begin{itemize} \setlength{\itemsep}{0.6em}
+               \item Apresentação do problema de particionamento \hs\ com foco em sistemas \wearables;
+               
+               \item Principais soluções apresentadas ao logo dos anos e as utilizadas atualmente;
+               
+               \item  Ferramentas \textit{high-level syntesis} (HLS) para a geração de sistemas computacionais que usufruem de aceleradores em \hardware.
+               
+               \item Abordagem metodológica para a procura da solução do problema de particionamento \hs\ apresentado.
+            \end{itemize}
+         \end{itemize}
+         
+      \end{frame}
+      
+      \begin{frame}{Processos a erem Executados} \vspace{-1em}
+         \begin{itemize} \setlength{\itemsep}{1.0em}
+            \item \textbf{Justificativa:}
+            \begin{itemize} \setlength{\itemsep}{0.3em}
+               \item \Designs\ mais complexos.
+               
+               \item Necessidade de eficiência energética segue junto com \speedup\ \cite{Trindade2016, Arato2005, Yan2017}.
+               
+               \item Defasagem em pesquisa científica para \wearables.
+               
+            \end{itemize}
+         
+            \item \textbf{Objetivo:} 
+            \begin{itemize} \setlength{\itemsep}{0.3em}
+               \item \textbf{Balanceamento de todas as tarefas} otimizando alguns objetivos de sistema sobre determinadas restrições.
+               
+               \item \textbf{Alta performance} com o \textbf{baixo consumo de energia} para maximizar o tempo de uso da bateria.
+            \end{itemize}
+            \item \textbf{Metodologia:} 
+            \begin{enumerate} \setlength{\itemsep}{0.3em}
+               \item Agrupar específicos conjuntos de instruções de uma aplicação; e
+               \item Mapear esses grupos tanto em \hs.
+            \end{enumerate}
+         
+            \item \textbf{Contribuição Esperada:} 
+            \begin{itemize} \setlength{\itemsep}{0.3em}
+               \item Pesquisa de particionamento sobre \wearables\ + \hardware\ reconfigurável.
+            \end{itemize}
+         \end{itemize}
+      \end{frame}

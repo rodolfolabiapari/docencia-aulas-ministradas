@@ -1,0 +1,44 @@
+digraph {
+    //label="Grafo de Chamada do Wearable";
+
+    node[shape="box", style="rounded"]
+       start; end;
+    node[shape="parallelogram", style=""]
+       read_sensors; process; backup; interruption; leds;
+    node[shape="diamond", style=""]
+       while_on; if_warning;
+
+
+    start -> while_on;
+    while_on -> read_sensors[label="yes"];
+    read_sensors -> process;
+    process -> if_warning;
+    if_warning -> backup [label="no"];
+    if_warning -> interruption [label="yes"];
+    interruption -> leds;
+    leds -> backup;
+    backup -> while_on;
+    while_on -> end [label="no"];
+
+    start [label="Start"];
+    while_on [label="Is device on?"];
+    //read_sensors [label="Read Sensors"];
+    //process [label="Process Sensors"];
+    read_sensors [label="Read Sensors", style="filled", fillcolor="#ffa07a"];
+    process [label="Process Sensors", style="filled", fillcolor="#ffa07a"]
+    if_warning [label="Is there warning?"];
+    backup [label="Back Up"];
+    interruption [label="Interruption"];
+    leds [label="Leds"];
+    end [label="End"];
+
+    {rank=same; start; end;}
+
+
+    {rank=same; while_on; read_sensors;}
+
+    {rank=same; backup; process;}
+
+    {rank=same; leds; if_warning;}
+    //{rank=same; if_warning; backup;}
+}
